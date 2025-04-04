@@ -4,7 +4,7 @@
  */
 function isValidPlate(plate) {
 
-    if (!plate || typeof plate !== 'string' || plate.length !== 7) {
+    if (!plate || typeof plate !== 'string' || plate.length !== 8) {
         return false;
     }
 

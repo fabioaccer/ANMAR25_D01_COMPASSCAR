@@ -169,7 +169,7 @@ Você tem duas opções para criar as tabelas necessárias:
        id INT AUTO_INCREMENT PRIMARY KEY,
        brand VARCHAR(255) NOT NULL,
        model VARCHAR(255) NOT NULL,
-       plate VARCHAR(7) UNIQUE NOT NULL,
+       plate VARCHAR(8) UNIQUE NOT NULL,
        year INT NOT NULL,
        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
    );

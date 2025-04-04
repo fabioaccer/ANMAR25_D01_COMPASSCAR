@@ -21,7 +21,7 @@ Esta é uma API REST para gerenciamento de carros, desenvolvida com Node.js, Exp
 O projeto tem uma arquitetura em camadas:
 
 ```
-api-carros/
+ANMAR25_D01_COMPASSCAR/
 ├── src/
 │   ├── config/       # Configurações
 │   ├── controllers/  # Controladores

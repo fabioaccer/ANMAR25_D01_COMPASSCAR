@@ -55,9 +55,17 @@ class CarRepository {
         }
 
         if (final_plate) {
-            where.plate = {
-                [Op.like]: `%${final_plate}`
-            };
+
+            const carsWithFinalPlate = [];
+
+            for (const car of allCars) {
+                if (this.hasPlateEndingWith(car.plate, final_plate)) {
+                    carsWithFinalPlate.push(car);
+                }
+            }
+
+            filteredCars = carsWithFinalPlate;
+
         }
 
         if (brand) {
@@ -163,7 +171,21 @@ class CarRepository {
             throw error;
         }
     }
-    
+
+    /**
+     * @param {string} plate
+     * @param {string} finalChar
+     * @returns {boolean}
+     */
+    hasPlateEndingWith(plate, finalChar) {
+        if (!plate || typeof plate !== 'string' || !finalChar || typeof finalChar !== 'string') {
+            return false;
+        }
+
+        const lastChar = plate.charAt(plate.length - 1);
+        return lastChar === finalChar;
+    }
+
 }
 
 module.exports = new CarRepository();
